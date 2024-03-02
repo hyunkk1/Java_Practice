@@ -27,3 +27,4 @@ public class TypeCastEx {
 
     }
 }
+// 기본 문법
