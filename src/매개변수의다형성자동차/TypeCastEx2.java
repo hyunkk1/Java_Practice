@@ -15,12 +15,10 @@ public class TypeCastEx2 {
             case 1 : driver.drive(bus); break;
             case 2 : driver.drive(taxi); break;
             case 3 : driver.drive(sportsCar); break;
-            default: System.out.println("선택하신 차량잉 없습니다.");
+            default: System.out.println("선택하신 차량이 없습니다.");
         }
     }
 }
-
-
 class Driver {
     String name;
     public Driver(String name) {

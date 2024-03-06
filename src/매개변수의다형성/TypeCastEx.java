@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class TypeCastEx {
     public static void main(String[] args) {
+
         Buyer buyer = new Buyer();
         TV tv = new TV();
         Computer computer = new Computer();
@@ -32,6 +33,7 @@ public class TypeCastEx {
                     buyer.viewinfo();
                     return;
                 default:
+                    System.out.println("잘못입력했습니다. 다시 입력하세요");
                     break;
             }
         }

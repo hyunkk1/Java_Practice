@@ -29,12 +29,12 @@ public class Lotto {
             }
 
             // 1부터 45까지의 임의의 인덱스 생성
-            int rdnIndex = (int) (Math.random()* 45);
+            int rdnIdx = (int) (Math.random()* 45 + 1);
             // 중복된 숫자가 아니면 해당 숫자를 로또 번호 배열에 추가
-            if (nums[rdnIndex] != 0) {
-                lottonumbers[idx] = nums[rdnIndex];
+            if (nums[rdnIdx] != 0) {
+                lottonumbers[idx] = nums[rdnIdx];
                 // 이미 사용된 숫자는 0으로 변경하여 중복 사용 방지
-                nums[rdnIndex] = 0;
+                nums[rdnIdx] = 0;
                 idx ++; // 로또 번호 배열의 다음 인덱스로 이동
             }
         }

@@ -1,7 +1,9 @@
 package 집주소;
 
 import java.util.Scanner;
-
+// 각숫자사이에는 1의 여백
+// 1은 2cm 0은 4cm else 3cm
+//
 public class HomeAddress {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -13,7 +15,7 @@ public class HomeAddress {
         while (!num.equals("0")) {
             num = sc.nextLine();
             for (int i = 0; i < num.length(); i++) {
-                sum += numSize[num.charAt(i) - '0'] + 1;
+                sum = sum + numSize[num.charAt(i) - '0'] + 1;
             }
             if (!num.equals("0")) {
                 System.out.println(sum + 1);

@@ -24,7 +24,7 @@ public class ProductTV extends ProtoTypeTV{
             System.out.println("볼륨 설정 범위를 벗어났습니다.");
         }
     }
-    @Override // 부모가 만들 메소드를 재정의해서 사용하기 위해서 오버라이딩 성립 여부를 확인하는 어노테이션
+    @Override // 부모가 만들 메소드를 재정의해서 사용하기 위해 오버라이딩 성립 여부를 확인하는 어노테이션
     public void setChannel(int cnl) {
         if(cnl > 0 && cnl < 2000) {
             channel = cnl;
