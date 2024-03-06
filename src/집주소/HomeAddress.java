@@ -19,7 +19,7 @@ public class HomeAddress {
                 System.out.println(sum + 1);
                 sum = 0;
             }
+
         }
-        System.out.println("호수판의 너비는 ");
     }
 }
