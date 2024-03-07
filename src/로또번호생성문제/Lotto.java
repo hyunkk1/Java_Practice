@@ -1,43 +1,25 @@
 package 로또번호생성문제;
-
+// 1에서 45사이의 6개의 임의의 수, 단 중복되지 않아야함
 import java.util.Arrays;
 
 public class Lotto {
     public static void main(String[] args) {
-        // 로또 번호 생성 함수를 호출하여 로또 번호를 가져옴
-        int[] lottoNumbers = gnrLottoNum();
-        // 생성된 로또 번호를 출력
-        System.out.println("로또 번호 " + Arrays.toString(lottoNumbers));
-    }
-
-    public static int[] gnrLottoNum() {
-        // 1부터 45까지의 숫자를 저장하는 배열 생성
-        int[] nums = new int[45];
-        // 배열에 1부터 45까지의 숫자 할당
-        for (int i = 0 ; i < nums.length; i++) {
-            nums[i] = i + 1;
-        }
-
-        // 로또 번호를 저장할 배열 생성
-        int[] lottonumbers = new int[6];
-        // 로또 번호 배열에 중복되지 않는 6개의 숫자 채우기
-        int idx = 0; // 로또 번호 배열의 인덱스
-        for(int num : nums) { // nums 배열의 각 요소를 num 변수에 할당하여 반복
-            // 이미 6개의 로또 번호가 생성되었으면 반복문 종료
-            if (idx >= 6) {
-                break;
+        int[] lotto = new int[6]; // 로또 번호를 담기위한 배열, 중복된 값을 허용하기 않기 위헤서
+        int number = 0; // 랜덤으로 생성된 로또번호를 담을 변수
+        int index = 0; // 로또 번호를 담고 배열의 위치를 이동하기 위해 사용하는 인덱스
+        boolean isExist = false; // 중복 여부를 체크
+        while(true) { // 중복이 몇번발생할지 모르기 때문에 무한반복
+            number = (int) ((Math.random() * 45) + 1); // 1 ~ 45사이의 정수값 반환
+            for(int i = 0; i < 6; i++) {
+                if(lotto[i] == number) isExist = true; // 배열내에서 랜덤으로 생성한 번호와 같은게 있으면 true 반환
             }
-
-            // 1부터 45까지의 임의의 인덱스 생성
-            int rdnIdx = (int) (Math.random()* 45 + 1);
-            // 중복된 숫자가 아니면 해당 숫자를 로또 번호 배열에 추가
-            if (nums[rdnIdx] != 0) {
-                lottonumbers[idx] = nums[rdnIdx];
-                // 이미 사용된 숫자는 0으로 변경하여 중복 사용 방지
-                nums[rdnIdx] = 0;
-                idx ++; // 로또 번호 배열의 다음 인덱스로 이동
+            if(!isExist) {
+                lotto[index++] = number; // 중복되지 않은 번호를 배열에 넣고 인덱스를 증가
             }
+            if(index == 6) break; // 중복되지 않은 로또 번호가 6개 만들어졌으므로 반복문 탈출
+            isExist = false;
         }
-        return lottonumbers; // 생성된 로또 번호 배열 반환
+        for(int e : lotto) System.out.println(e + " ");
+
     }
 }
