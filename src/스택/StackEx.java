@@ -20,3 +20,8 @@ public class StackEx {
 
     }
 }
+// public void int i = new int k
+// for(i = 0; i < k, i++) {
+// if(trace == 'kk') sout("다시 입력해주세요")
+// }
+
